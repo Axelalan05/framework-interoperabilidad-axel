@@ -12,6 +12,9 @@ RUN pip install --upgrade pip setuptools
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+
 EXPOSE 8000
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["/start.sh"]

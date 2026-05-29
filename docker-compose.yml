@@ -1,8 +1,10 @@
 services:
   backend:
-    image: video-backend:0.1
+    image: video-backend:0.2
     build:
       context: ./config/django_image
+    env_file:
+      - .env
     volumes:
       - ./src/django:/usr/src/app:delegated
     ports:
